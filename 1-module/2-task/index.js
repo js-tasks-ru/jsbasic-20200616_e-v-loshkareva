@@ -1,3 +1,6 @@
+/**
+ * Эту функцию трогать не нужно
+ */
 function print(text) {
   console.log(text);
 }
@@ -6,6 +9,7 @@ function print(text) {
  * Эту функцию нужно поменять так,
  * чтобы функция sayHello работала корректно
  */
+
 function isValid(name) {
   if (name === '' || name == undefined || name.length <4 || (name.indexOf(' ') >-1 ))
 {
