@@ -9,8 +9,14 @@ function print(text) {
  * Эту функцию нужно поменять так,
  * чтобы функция sayHello работала корректно
  */
+
 function isValid(name) {
-  // ваш код...
+  if (name === '' || name == undefined || name.length <4 || (name.indexOf(' ') >-1 ))
+{
+  return false;}
+    else
+{  return true;
+}
 }
 
 function sayHello() {
