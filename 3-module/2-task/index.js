@@ -4,6 +4,9 @@
  * @param {number} b
  * @returns {number[]}
  */
-function filterRange(arr, a, b) {
-  // ваш код...
-}
+ function filterRange(arr, a, b) {
+ let resultArr=[];
+ resultArr= arr.filter(item => item>=a && item<=b);
+ return resultArr;
+ //console.log(arr.filter(item => item>=a && item<=b));
+ }
