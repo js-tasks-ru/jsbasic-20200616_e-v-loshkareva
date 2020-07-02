@@ -5,7 +5,6 @@
  */
 // Add your code here
 
-
 function getMinMax(str) {
   let result = str;
   let i = 0;
@@ -14,7 +13,6 @@ function getMinMax(str) {
     if (i !== -1) result = result.slice(0, i) + ' ' + result.slice(i + 1, result.length);
   }
   result = result.split(' ');
-  //console.log(result);
   let min, max;
   result.forEach(function(val) {
 
