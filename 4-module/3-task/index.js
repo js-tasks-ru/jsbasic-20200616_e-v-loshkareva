@@ -12,7 +12,7 @@
 
  */
 function highlight(table) {
-  console.log(table.tBodies[0].rows);
+  
   for (var i = 0; i < table.tBodies[0].rows.length; i++) {
     //console.log(table.tBodies[0].rows[i].cells[3].hasAttribute('data-available'));
     let hasAttribute = table.tBodies[0].rows[i].cells[3].hasAttribute('data-available');
