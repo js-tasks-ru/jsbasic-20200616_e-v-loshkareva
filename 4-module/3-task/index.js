@@ -17,7 +17,6 @@ function highlight(table) {
     //console.log(table.tBodies[0].rows[i].cells[3].hasAttribute('data-available'));
     let hasAttribute = table.tBodies[0].rows[i].cells[3].hasAttribute('data-available');
     if (hasAttribute == true) {
-      //console.log(table.tBodies[0].rows[i].cells[3].getAttribute('data-available'));
       if (table.tBodies[0].rows[i].cells[3].getAttribute('data-available') == "true") {
 
         table.tBodies[0].rows[i].classList.add('available');
