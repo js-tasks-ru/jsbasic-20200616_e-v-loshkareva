@@ -60,6 +60,7 @@ export default class Modal {
       }
       setBody(body) {
         //  document.body.appendChild( document.createElement( 'div' ) )
+          this.elem.querySelector('.modal__body').innerHTML = '';
         this.elem.querySelector('.modal__body').appendChild(body);
         //тут содержимое меняем
       }
