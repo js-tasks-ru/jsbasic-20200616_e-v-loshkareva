@@ -6,9 +6,6 @@
 
 export default function promiseClick(button) {
   return  new Promise(function(resolve, reject){
-   button.addEventListener('click', (event) => { 
+   button.addEventListener('click', (event) => {
   resolve(value);   }, { once: true });
   }
-
-promiseClick(button).then((event) => console.log(event));
-}
