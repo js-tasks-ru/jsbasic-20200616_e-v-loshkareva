@@ -84,25 +84,35 @@ export default class StepSlider {
          //
      };
 
+     const pointerupFunction = () => {
+       //console.log(1);
+       //arrowListener();
+       //if (this.elem.classList.contains('slider_dragging')){
+       this.elem.classList.remove('slider_dragging');
+ /*
+       this.elem.dispatchEvent(
+         new CustomEvent('slider-change', { // имя события должно быть именно 'slider-change'
+           detail: this.value, // значение 0, 1, 2, 3, 4
+           bubbles: true // событие всплывает - это понадобится в дальнейшем
+
+         }));
+         */
+       document.removeEventListener("pointermove", arrowListener, true);
+       document.removeEventListener("pointerup", pointerupFunction, true);
+     //  }
+
+       arrowListener1();
+     }
+
     trumP.addEventListener("pointerdown", () => {
+
       document.addEventListener("pointermove", arrowListener, true);
+      document.addEventListener("pointerup", pointerupFunction , true);
 
 
     }, true);
 
-    document.addEventListener("pointerup", () => {
-      //if (this.elem.classList.contains('slider_dragging')){
-      this.elem.classList.remove('slider_dragging');
-      this.elem.dispatchEvent(
-        new CustomEvent('slider-change', { // имя события должно быть именно 'slider-change'
-          detail: this.value, // значение 0, 1, 2, 3, 4
-          bubbles: true // событие всплывает - это понадобится в дальнейшем
 
-        }));
-      document.removeEventListener("pointermove", arrowListener, true);
-    //  }
-
-    }, true);
 
     const arrowListener1 = () => {
 
@@ -133,18 +143,18 @@ export default class StepSlider {
       thumb.style.left = `${valuePercents}%`;
       progress.style.width = `${valuePercents}%`;
 
+      this.elem.dispatchEvent(
+        new CustomEvent('slider-change', { // имя события должно быть именно 'slider-change'
+          detail: this.value, // значение 0, 1, 2, 3, 4
+          bubbles: true // событие всплывает - это понадобится в дальнейшем
+
+        }));
 
 
-         this.elem.dispatchEvent(
-           new CustomEvent('slider-change', { // имя события должно быть именно 'slider-change'
-             detail: this.value, // значение 0, 1, 2, 3, 4
-             bubbles: true // событие всплывает - это понадобится в дальнейшем
-
-           }));
 
          //
      };
-    this.elem.addEventListener('click',arrowListener1,true);
+     this.elem.addEventListener('click',arrowListener1,true);
     };
 
 

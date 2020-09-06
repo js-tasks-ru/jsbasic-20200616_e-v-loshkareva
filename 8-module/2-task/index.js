@@ -36,7 +36,7 @@ export default class ProductGrid {
   }
 
   render(products) {
-     let output ="";
+    //let output ="";
 
     if (!this.elem) this.elem = createElement(`
       <div class="products-grid">
@@ -44,8 +44,16 @@ export default class ProductGrid {
         </div>
       </div>
     `);
+    this.elem.querySelector('.products-grid__inner').innerHTML= '';
     for (let i = 0; i < products.length; i++) {
+
+
       if (products[i])
+      {
+        let card = new ProductCard(products[i]);
+        this.elem.querySelector('.products-grid__inner').appendChild(card.elem);
+      }
+      /*
       output = output +
         `<div class="card" id="${products[i].id}">
       <div class="card__top">
@@ -60,8 +68,13 @@ export default class ProductGrid {
       </div>
     </div>
     ` ;
+    */
     }
-    this.elem.querySelector('.products-grid__inner').innerHTML = output;
+
+
+    //this.elem.querySelector('.products-grid__inner').innerHTML = output;
+
+  
   }
 
 }
