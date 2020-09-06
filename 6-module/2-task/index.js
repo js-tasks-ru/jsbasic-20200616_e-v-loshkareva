@@ -22,8 +22,7 @@ export default class ProductCard {
     button.innerHTML = '<img src="/assets/images/icons/plus-icon.svg" alt="icon">';
 
 
-    button.onclick = () => {
-
+    button.onclick = (e) => {
       this.elem.dispatchEvent(
         new CustomEvent("product-add", {
           detail: this.card.id,
@@ -31,6 +30,8 @@ export default class ProductCard {
         }));
 
     }
+
+
 
     card__body.appendChild(button);
     this.elem = card;
